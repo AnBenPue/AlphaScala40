@@ -1,0 +1,5 @@
+alpha_scala_40/build
+alpha_scala_40/.pytest_cache
+alpha_scala_40/alpha_scala_40.egg-info
+alpha_scala_40/alpha_scala_40/__pycache__
+.pytest_cache
