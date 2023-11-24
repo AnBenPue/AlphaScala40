@@ -1,5 +1,6 @@
 from alpha_scala_40.card import Card, VALID_NUMBERS, VALID_SUITS
 from typing import List
+from random import sample
 
 
 class CardDeck:
@@ -15,6 +16,9 @@ class CardDeck:
     def merge(self, deck):
         for card in deck.cards:
             self.cards.append(card)
+
+    def shuffle(self):
+        self.cards = sample(self.cards, len(self.cards))
 
 
 class FullCardDeck(CardDeck):
@@ -35,9 +39,3 @@ if __name__ == "__main__":
     deck_2 = FullCardDeck()
 
     deck_1.merge(deck_2)
-
-    # print("Hello")
-    # deck_1.add("Test")
-    # print(deck_1.cards)
-    # deck_1.remove("Test")
-    # print(deck_1.cards)

@@ -17,3 +17,27 @@ def test_initialize_invalid_card():
         new_card = Card(c[0], c[1])
         assert new_card.number is None, "The number is valid"
         assert new_card.suit is None, "The suit is valid"
+
+
+def test_equal_card():
+    card_A = Card(1, 1)
+    card_B = Card(1, 1)
+    assert card_A == card_B, "The cards are not equal"
+    card_A = Card(10, 2)
+    card_B = Card(10, 2)
+    assert card_A == card_B, "The cards are not equal"
+    card_A = Card(-1, -1)
+    card_B = Card(-1, -1)
+    assert card_A == card_B, "The cards are not equal"
+
+
+def test_not_equal_card():
+    card_A = Card(1, 1)
+    card_B = Card(10, 1)
+    assert card_A != card_B, "The cards are equal"
+    card_A = Card(10, 1)
+    card_B = Card(10, 2)
+    assert card_A != card_B, "The cards are equal"
+    card_A = Card(13, 2)
+    card_B = Card(13, 1)
+    assert card_A != card_B, "The cards are equal"

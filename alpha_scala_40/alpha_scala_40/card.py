@@ -15,3 +15,9 @@ class Card:
         if number == -1 and suit == -1:
             self.number = number
             self.suit = suit
+
+    def __eq__(self, other):
+        return (self.number == other.number) and (self.suit == other.suit)
+
+    def __ne__(self, other):
+        return (self.number != other.number) or (self.suit != other.suit)
